@@ -3,44 +3,51 @@ extends layout
 block content
   div.heading
     h1.title PERSONAL POKEDEX
+  div.row.buttons
+    button.add ADD
+    button.remove REMOVE
   div.card-area
-    div.card.fairy
-      div.row
-        div.bold
-          //TODO figure out why variable imports aren't working, look in cardController as well
-          p=card.name
-        div.health.bold
-          p 50 HP
-        div.icon
-          img(src='/images/electric.png')
-      div.row
-        div.image
-          img(src='https://vignette.wikia.nocookie.net/wii/images/7/77/Pikachu_SSB4.jpg/revision/latest?cb=20140210000421')
-      div.row.bottom-line
-        div.icon
-          img(src='/images/electric.png')
-        div.bold
-          p Gnaw
-        div.bold
-          p 10
-      div.row.bottom-line
-        div.icon
-          img(src='/images/electric.png')
-          img(src='/images/electric.png')
-        div.bold
-          p Lightning Bolt
-        div.bold
-          p 50
-      div.row
-        div.italic.bottom.icon
-          p weaknesses
-          img(src='/images/ground.png')
-        div.italic.bottom.icon
-          p resistances
-          img(src='/images/flying.png')
-          img(src='/images/steel.png')
-          img(src='/images/electric.png')
-        div.italic.bottom.icon
-          p retreat cost
-          img(src='/images/electric.png')
-          img(src='/images/electric.png')
+    each card in cards
+      // TODO figure out how to implement type into class below
+      div.card.electric
+        div.row
+          div.bold
+            p=card.name
+          div.bold
+            p=`${card.hp} HP`
+          div.icon
+            img(src=card.typeIcon)
+          div.edit.bold
+            a(href='#') Edit
+        div.row
+          div.image
+            img(src=card.picture)
+        div.row.bottom-line
+          div.icon
+            -for(let i = 0; i < card.moveCostOne; i++)
+              img(src=card.typeIcon)
+          div.bold
+            p=card.moveNameOne
+          div.bold
+            p=card.moveCostOneNum
+        div.row.bottom-line
+          div.icon
+            -for (let i = 0; i < card.moveCostTwo; i++)
+              img(src=card.typeIcon)
+          div.bold
+            p=card.moveNameTwo
+          div.bold
+            p=card.moveCostTwoNum
+        div.row
+          div.italic.bottom.icon
+            p weaknesses
+            img(src=card.weaknessOne)
+          div.italic.bottom.icon
+            p resistances
+            img(src=card.resistanceOne)
+            img(src=card.resistanceTwo)
+            img(src=card.resistanceThree)
+          div.italic.bottom.icon
+            p retreat cost
+            -for (let i = 0; i < card.retreatCost; i++)
+              img(src=card.typeIcon)
