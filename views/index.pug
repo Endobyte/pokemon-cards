@@ -6,48 +6,7 @@ block content
   div.row.buttons
     button.add ADD
     button.remove REMOVE
+  include mixins/pokemonCard
   div.card-area
     each card in cards
-      // TODO figure out how to implement type into class below
-      div.card.electric
-        div.row
-          div.bold
-            p=card.name
-          div.bold
-            p=`${card.hp} HP`
-          div.icon
-            img(src=card.typeIcon)
-          div.edit.bold
-            a(href='#') Edit
-        div.row
-          div.image
-            img(src=card.picture)
-        div.row.bottom-line
-          div.icon
-            -for(let i = 0; i < card.moveCostOne; i++)
-              img(src=card.typeIcon)
-          div.bold
-            p=card.moveNameOne
-          div.bold
-            p=card.moveCostOneNum
-        div.row.bottom-line
-          div.icon
-            -for (let i = 0; i < card.moveCostTwo; i++)
-              img(src=card.typeIcon)
-          div.bold
-            p=card.moveNameTwo
-          div.bold
-            p=card.moveCostTwoNum
-        div.row
-          div.italic.bottom.icon
-            p weaknesses
-            img(src=card.weaknessOne)
-          div.italic.bottom.icon
-            p resistances
-            img(src=card.resistanceOne)
-            img(src=card.resistanceTwo)
-            img(src=card.resistanceThree)
-          div.italic.bottom.icon
-            p retreat cost
-            -for (let i = 0; i < card.retreatCost; i++)
-              img(src=card.typeIcon)
+      +pokemonCard(card)

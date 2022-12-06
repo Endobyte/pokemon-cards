@@ -1,0 +1,45 @@
+mixin pokemonCard(card)
+
+    div(class=`card ${card.type}`)
+        div.row
+            div.bold
+                p=card.name
+            div.bold
+                p=`${card.hp} HP`
+            div.icon
+                img(src=`images/${card.type}.png`)
+            div.edit.bold
+                a(href='#') Edit
+        div.row
+            div.image
+                img(src=card.picture)
+        div.row.bottom-line
+            div.icon
+                -for (let i = 0; i < card.moveCostOne; i++)
+                  img(src=`images/${card.type}.png`)
+            div.bold
+                p=card.moveNameOne
+            div.bold
+                p=card.moveCostOneNum
+        div.row.bottom-line
+            div.icon
+                -for (let i = 0; i < card.moveCostTwo; i++)
+                  img(src=`images/${card.type}.png`)
+            div.bold
+                p=card.moveNameTwo
+            div.bold
+                p=card.moveCostTwoNum
+        div.row
+            div.italic.bottom.icon
+                p weaknesses
+                //TODO if not null, show image once database is implemented
+                img(src=`images/${card.weaknessOne}.png`)
+            div.italic.bottom.icon
+                p resistances
+                img(src=`images/${card.resistanceOne}.png`)
+                img(src=`images/${card.resistanceTwo}.png`)
+                img(src=`images/${card.resistanceThree}.png`)
+            div.italic.bottom.icon
+                p retreat cost
+                -for (let i = 0; i < card.retreatCost; i++)
+                  img(src='/images/colorless.png')
