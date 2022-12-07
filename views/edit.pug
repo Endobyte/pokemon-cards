@@ -1,0 +1,81 @@
+extends layout
+
+block content
+    div.form-panel
+        div.header Edit Pokemon Card
+            form(action=`/edit/${card.id}` method='post')
+                div.form-input
+                    label(for='name') Name:
+                    input(type='text' id='name' name='name' value=card.name)
+                div.form-input
+                    label(for='type') Type:
+                    select(id='type' name='type' autocomplete='off')
+                        each type in types
+                            option(value = type selected = (type === card.type)) #{type}
+                div.form-input
+                    label(for='type') HP:
+                    input(type='number' id='hp' name='hp' value=card.hp)
+                div.form-input
+                    label(for='picture') Picture URL:
+                    input(type='text' id='picture' name='picture' value=card.picture)
+                div.form-input
+                    label(for='moveCostOne') Move #1 Cost (# of tokens):
+                    select(id='moveCostOne' name='moveCostOne' autocomplete='off')
+                        -for(let i = 1; i <= 3; i++)
+                            option(value = i selected = (moveCostOne === card.moveCostOne)) #{i}
+                div.form-input
+                    label(for='moveNameOne') Move #1 Name:
+                    input(type='text' id='moveNameOne' name='moveNameOne' value=card.moveNameOne)
+                div.form-input
+                    label(for='moveCostOneNum') Move #1 Cost (value):
+                    input(type='number' id='moveCostOneNum' name='moveCostOneNum' value=card.moveCostOneNum)
+                div.form-input
+                    label(for='moveCostTwo') Move #2 Cost (# of tokens):
+                    select(id='moveCostTwo' name='moveCostTwo' autocomplete='off')
+                        -for (let i = 1; i <= 3; i++)
+                            option(value = i selected = (moveCostTwo === card.moveCostTwo)) #{i}
+                div.form-input
+                    label(for='moveNameTwo') Move #2 Name:
+                    input(type='text' id='moveNameTwo' name='moveNameTwo' value=card.moveNameTwo)
+                div.form-input
+                    label(for='moveCostTwoNum') Move #2 Cost (value):
+                    input(type='number' id='moveCostTwoNum' name='moveCostTwoNum' value=card.moveCostTwoNum)
+                div.form-input
+                    label(for='weaknessOne') Weakness One:
+                    select(id='weaknessOne' name='weaknessOne' autocomplete='off')
+                        each type in types
+                            option(value = type selected = (type === card.type)) #{type}
+                div.form-input
+                    label(for='weaknessTwo') Weakness Two:
+                    select(id='weaknessTwo' name='weaknessTwo' autocomplete='off')
+                        each type in types
+                            option(value = type selected = (type === card.type)) #{type}
+                div.form-input
+                    label(for='weaknessThree') Weakness Three:
+                    select(id='weaknessThree' name='weaknessThree' autocomplete='off')
+                        each type in types
+                            option(value = type selected = (type === card.type)) #{type}
+                div.form-input
+                    label(for='resistanceOne') Resistance One:
+                    select(id='resistanceOne' name='resistanceOne' autocomplete='off')
+                        each type in types
+                            option(value = type selected = (type === card.type)) #{type}
+                div.form-input
+                    label(for='resistanceTwo') Resistance Two:
+                    select(id='resistanceTwo' name='resistanceTwo' autocomplete='off')
+                        each type in types
+                            option(value = type selected = (type === card.type)) #{type}
+                div.form-input
+                    label(for='resistanceThree') Resistance Three:
+                    select(id='resistanceThree' name='resistanceThree' autocomplete='off')
+                        each type in types
+                            option(value = type selected = (type === card.type)) #{type}
+                div.form-input
+                    label(for='retreatCost') Retreat Cost (# of tokens):
+                    select(id='retreatCost' name='retreatCost' autocomplete='off')
+                        -for (let i = 1; i <= 3; i++)
+                            option(value = i selected = (retreatCost === card.retreatCost)) #{i}
+                div.button-row
+                    a.button.cancel(href='/') Cancel
+                    a.button.delete(href=`/delete/${card.id}`) Delete
+                    button.button.save(type='submit') Submit

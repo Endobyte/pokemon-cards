@@ -4,5 +4,6 @@ const cardController = require('../controllers/cardController');
 
 /* GET home page. */
 router.get('/', cardController.viewCards);
+router.get('/edit/:id', cardController.renderEditForm);
 
 module.exports = router;

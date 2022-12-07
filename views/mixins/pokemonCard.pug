@@ -9,7 +9,7 @@ mixin pokemonCard(card)
             div.icon
                 img(src=`images/${card.type}.png`)
             div.edit.bold
-                a(href='#') Edit
+                a(href=`/edit/${card.id}`) Edit
         div.row
             div.image
                 img(src=card.picture)
@@ -32,13 +32,20 @@ mixin pokemonCard(card)
         div.row
             div.italic.bottom.icon
                 p weaknesses
-                //TODO if not null, show image once database is implemented
-                img(src=`images/${card.weaknessOne}.png`)
+                if card.weaknessOne
+                    img(src=`images/${card.weaknessOne}.png`)
+                if card.weaknessTwo
+                    img(src=`images/${card.weaknessTwo}.png`)
+                if card.weaknessThree
+                    img(src=`images/${card.weaknessThree}.png`)
             div.italic.bottom.icon
                 p resistances
-                img(src=`images/${card.resistanceOne}.png`)
-                img(src=`images/${card.resistanceTwo}.png`)
-                img(src=`images/${card.resistanceThree}.png`)
+                if card.resistanceOne
+                    img(src=`images/${card.resistanceOne}.png`)
+                if card.resistanceTwo
+                    img(src=`images/${card.resistanceTwo}.png`)
+                if card.resistanceThree
+                    img(src=`images/${card.resistanceThree}.png`)
             div.italic.bottom.icon
                 p retreat cost
                 -for (let i = 0; i < card.retreatCost; i++)
