@@ -2,9 +2,9 @@ extends layout
 
 block content
   div.heading
-    h1.title PERSONAL POKEDEX
+    h1.title PERSONAL POKÈDEX
   div.row.buttons
-    button.add ADD A CARD
+      button.add(onclick="window.location.href='/add';") ADD A CARD
   include mixins/pokemonCard
   div.card-area
     each card in cards
