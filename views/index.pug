@@ -4,7 +4,18 @@ block content
   div.heading
     h1.title PERSONAL POKÈDEX
   div.row.buttons
-      button.add(onclick="window.location.href='/add';") ADD A CARD
+    button.add(onclick="window.location.href='/add';") ADD A CARD
+  div.row
+    form(action='/' method='get')
+      div.form-input
+        label(for='type') Type
+        select(id='type' name='type' autocomplete='off')
+          each type in types
+            option(value = type selected = (type === searchType)) #{type}
+      div.form-input
+        label(for='random') Random?
+        input(type='checkbox' name='random' id='random' checked=searchRandom)
+      button.button.save(type='submit') Filter
   include mixins/pokemonCard
   div.card-area
     each card in cards

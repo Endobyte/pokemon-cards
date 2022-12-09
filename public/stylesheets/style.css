@@ -90,6 +90,10 @@ body {
   box-shadow: -5px -5px 15px -5px rgba(77,77,77,1) inset;
 }
 
+.buttons button:focus {
+  box-shadow: -10px -10px 15px -5px rgba(77,77,77,1) inset;
+}
+
 .edit a {
   color: #0074f0;
   text-decoration: none;
@@ -101,13 +105,28 @@ body {
 .form-panel {
   background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(231,231,231,1) 50%, rgba(179,179,179,1) 100%);
   border-radius: 16px;
-  width: 40%;
+  width: 33%;
   box-shadow: 6px 6px 39px -1px rgba(77,77,77,0.75);
   padding: 16px;
   margin: 16px auto;
+  text-align: center;
 }
 
-/*TODO finish form CSS*/
+.form-input {
+  font: 16px Helvetica, Arial, sans-serif;
+  margin-right: 15px;
+  padding: 8px;
+}
+
+label {
+  padding-right: 3px;
+}
+
+.header {
+  font-weight: bold;
+  padding: 16px;
+  font-size: 24px;
+}
 
 .card.grass {
   background: radial-gradient(circle, rgba(161,209,146,1) 0%, rgba(115,206,102,1) 35%, rgba(17,122,18,1) 100%);
