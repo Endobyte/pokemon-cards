@@ -3,19 +3,23 @@ extends layout
 block content
   div.heading
     h1.title PERSONAL POKÈDEX
-  div.row.buttons
+  div.row.buttons.space-above
     button.add(onclick="window.location.href='/add';") ADD A CARD
-  div.row
     form(action='/' method='get')
-      div.form-input
-        label(for='type') Type
-        select(id='type' name='type' autocomplete='off')
-          each type in types
-            option(value = type selected = (type === searchType)) #{type}
-      div.form-input
-        label(for='random') Random?
-        input(type='checkbox' name='random' id='random' checked=searchRandom)
-      button.button.save(type='submit') Filter
+      div.together
+        div.column
+          div.form-input.homepage
+            label(for='type') Type =
+            select(id='type' name='type' autocomplete='off')
+              each type in types
+                option(value = type selected = (type === searchType)) #{type}
+          div.form-input.homepage
+            label(for='random') Random
+            input(type='checkbox' name='random' id='random' checked=searchRandom)
+          div.form-input.homepage
+            label(for='checkHp') HP > 100
+            input(type='checkbox' name='checkHp' id='checkHp' checked=searchHp)
+        button.button.save.special(type='submit') FILTER
   include mixins/pokemonCard
   div.card-area
     each card in cards

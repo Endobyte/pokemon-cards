@@ -17,17 +17,17 @@ mixin pokemonCard(card)
             div.icon
                 -for (let i = 0; i < card.moveCostOne; i++)
                   img(src=`images/${card.type}.png`)
-            div.bold
+            div.bold.move
                 p=card.moveNameOne
-            div.bold
+            div.bold.move
                 p=card.moveCostOneNum
         div.row.bottom-line.power
             div.icon
                 -for (let i = 0; i < card.moveCostTwo; i++)
                   img(src=`images/${card.type}.png`)
-            div.bold
+            div.bold.move
                 p=card.moveNameTwo
-            div.bold
+            div.bold.move
                 p=card.moveCostTwoNum
         div.row
             div.italic.bottom.icon

@@ -18,7 +18,7 @@ mixin pokemonForm(card, actionURL, mode, title)
                 label(for='picture') Picture URL:
                 input(type='text' id='picture' name='picture' value=card.picture)
             div.form-input
-                label(for='moveCostOne') Move #1 Cost (# of tokens):
+                label(for='moveCostOne') Move #1 Token Cost:
                 select(id='moveCostOne' name='moveCostOne' autocomplete='off')
                     -for(let i = 1; i <= 3; i++)
                         option(value = i selected = (moveCostOne === card.moveCostOne)) #{i}
@@ -26,10 +26,10 @@ mixin pokemonForm(card, actionURL, mode, title)
                 label(for='moveNameOne') Move #1 Name:
                 input(type='text' id='moveNameOne' name='moveNameOne' value=card.moveNameOne)
             div.form-input
-                label(for='moveCostOneNum') Move #1 Cost (value):
+                label(for='moveCostOneNum') Move #1 Damage:
                 input(type='number' id='moveCostOneNum' name='moveCostOneNum' value=card.moveCostOneNum)
             div.form-input
-                label(for='moveCostTwo') Move #2 Cost (# of tokens):
+                label(for='moveCostTwo') Move #2 Token Cost:
                 select(id='moveCostTwo' name='moveCostTwo' autocomplete='off')
                     -for (let i = 1; i <= 3; i++)
                         option(value = i selected = (moveCostTwo === card.moveCostTwo)) #{i}
@@ -37,7 +37,7 @@ mixin pokemonForm(card, actionURL, mode, title)
                 label(for='moveNameTwo') Move #2 Name:
                 input(type='text' id='moveNameTwo' name='moveNameTwo' value=card.moveNameTwo)
             div.form-input
-                label(for='moveCostTwoNum') Move #2 Cost (value):
+                label(for='moveCostTwoNum') Move #2 Damage:
                 input(type='number' id='moveCostTwoNum' name='moveCostTwoNum' value=card.moveCostTwoNum)
             div.form-input
                 label(for='weaknessOne') Weakness One:

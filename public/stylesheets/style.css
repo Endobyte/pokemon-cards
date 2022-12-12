@@ -1,6 +1,6 @@
 body {
   font: 14px Helvetica, Arial, sans-serif;
-  background-image: url("../images/background.png");
+  background: linear-gradient(180deg, rgba(161,174,255,1) 0%, rgba(113,99,255,1) 50%, rgba(41,140,17,1) 100%);
   margin: 0;
   padding: 0;
 }
@@ -28,6 +28,7 @@ body {
   padding: 25px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card {
@@ -49,6 +50,10 @@ body {
   padding: 0 16px;
 }
 
+.space-above {
+  margin-top: 16px;
+}
+
 .card .image img {
   box-shadow: 1px 1px 5px 0 rgba(102,102,102,0.75);
 }
@@ -64,6 +69,10 @@ body {
 .icon img {
   height: 20px;
   width: 20px;
+}
+
+.move {
+  font-size: 12px;
 }
 
 .image img {
@@ -84,6 +93,35 @@ body {
   font-family: 'Nerko One', cursive;
   -webkit-text-stroke: 2px #2972b8;
   color: #ffcb05;
+}
+
+.save.special {
+  margin: 16px;
+  padding: 0 8px 0 8px;
+  font-size: 50px;
+  border: 3px solid #2972b8;
+  border-radius: 4px;
+  font-family: 'Nerko One', cursive;
+  -webkit-text-stroke: 2px #2972b8;
+  color: #ffcb05;
+}
+
+.together {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+#random, #checkhp {
+  height: 16px;
+  width: 16px;
+}
+
+.homepage label {
+  font-family: 'Nerko One', cursive;
+  font-size: 24px;
 }
 
 .buttons button:hover {

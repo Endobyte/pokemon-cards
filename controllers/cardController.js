@@ -25,6 +25,8 @@ module.exports.viewCards = async function(req, res) {
     res.render('index', {cards, types:searchTypes, searchType});
 }
 
+// TODO implement HP filter
+
 module.exports.renderEditForm = async function(req, res) {
     const card = await Card.findByPk(
         req.params.id
