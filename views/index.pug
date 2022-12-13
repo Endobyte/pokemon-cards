@@ -9,15 +9,15 @@ block content
       div.together
         div.column
           div.form-input.homepage
-            label(for='type') Type =
+            label.white(for='type') Type =
             select(id='type' name='type' autocomplete='off')
               each type in types
                 option(value = type selected = (type === searchType)) #{type}
           div.form-input.homepage
-            label(for='random') Random
+            label.white(for='random') Random
             input(type='checkbox' name='random' id='random' checked=searchRandom)
           div.form-input.homepage
-            label(for='checkHp') HP > 100
+            label.white(for='checkHp') HP > 100
             input(type='checkbox' name='checkHp' id='checkHp' checked=searchHp)
         button.button.save.special(type='submit') FILTER
   include mixins/pokemonCard

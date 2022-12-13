@@ -16,7 +16,7 @@ mixin pokemonCard(card)
         div.row.bottom-line.power
             div.icon
                 -for (let i = 0; i < card.moveCostOne; i++)
-                  img(src=`images/${card.type}.png`)
+                  img(src=`images/colorless.png`)
             div.bold.move
                 p=card.moveNameOne
             div.bold.move
@@ -24,7 +24,7 @@ mixin pokemonCard(card)
         div.row.bottom-line.power
             div.icon
                 -for (let i = 0; i < card.moveCostTwo; i++)
-                  img(src=`images/${card.type}.png`)
+                  img(src=`images/colorless.png`)
             div.bold.move
                 p=card.moveNameTwo
             div.bold.move
