@@ -10,7 +10,11 @@ module.exports.viewCards = async function(req, res) {
     let searchType = req.query.type || 'all';
     let searchRandom = req.query.random || false;
     if (searchType === 'all') {
-        cards = await Card.findAll();
+        cards = await Card.findAll({
+            order: [
+                ['id', 'ASC']
+            ]
+        });
     } else {
         cards = await Card.findAll({
             where: {
@@ -24,8 +28,6 @@ module.exports.viewCards = async function(req, res) {
     }
     res.render('index', {cards, types:searchTypes, searchType});
 }
-
-// TODO implement HP filter
 
 module.exports.renderEditForm = async function(req, res) {
     const card = await Card.findByPk(

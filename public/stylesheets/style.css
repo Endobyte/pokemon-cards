@@ -1,6 +1,6 @@
 body {
   font: 14px Helvetica, Arial, sans-serif;
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  background: radial-gradient(circle, rgba(66,163,255,1) 0%, rgba(75,57,255,1) 50%, rgba(21,0,152,1) 100%);
   margin: 0;
   padding: 0;
 }
@@ -118,7 +118,7 @@ body {
   flex-direction: column;
 }
 
-#random, #checkHp {
+#random {
   height: 16px;
   width: 16px;
 }

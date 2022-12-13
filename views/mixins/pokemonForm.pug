@@ -21,7 +21,7 @@ mixin pokemonForm(card, actionURL, mode, title)
                 label(for='moveCostOne') Move #1 Token Cost:
                 select(id='moveCostOne' name='moveCostOne' autocomplete='off')
                     -for(let i = 1; i <= 3; i++)
-                        option(value = i selected = (moveCostOne === card.moveCostOne)) #{i}
+                        option(value = i selected = (i === card.moveCostOne)) #{i}
             div.form-input
                 label(for='moveNameOne') Move #1 Name:
                 input(type='text' id='moveNameOne' name='moveNameOne' value=card.moveNameOne)
@@ -32,7 +32,7 @@ mixin pokemonForm(card, actionURL, mode, title)
                 label(for='moveCostTwo') Move #2 Token Cost:
                 select(id='moveCostTwo' name='moveCostTwo' autocomplete='off')
                     -for (let i = 1; i <= 3; i++)
-                        option(value = i selected = (moveCostTwo === card.moveCostTwo)) #{i}
+                        option(value = i selected = (i === card.moveCostTwo)) #{i}
             div.form-input
                 label(for='moveNameTwo') Move #2 Name:
                 input(type='text' id='moveNameTwo' name='moveNameTwo' value=card.moveNameTwo)
@@ -70,10 +70,10 @@ mixin pokemonForm(card, actionURL, mode, title)
                     each type in types
                         option(value = type selected = (type === card.resistanceThree)) #{type}
             div.form-input
-                label(for='retreatCost') Retreat Cost (# of tokens):
+                label(for='retreatCost') Retreat Token Cost:
                 select(id='retreatCost' name='retreatCost' autocomplete='off')
                     -for (let i = 1; i <= 3; i++)
-                        option(value = i selected = (retreatCost === card.retreatCost)) #{i}
+                        option(value = i selected = (i === card.retreatCost)) #{i}
             div.row
                 a.button.cancel(href='/') Cancel
                 if (mode === 'edit')
