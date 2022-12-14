@@ -9,7 +9,7 @@ block content
       div.together
         div.column
           div.form-input.homepage
-            label.white(for='type') Type =
+            label.white(for='type') Type
             select(id='type' name='type' autocomplete='off')
               each type in types
                 option(value = type selected = (type === searchType)) #{type}

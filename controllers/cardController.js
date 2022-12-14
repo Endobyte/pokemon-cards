@@ -126,14 +126,14 @@ module.exports.addCard = async function(req, res) {
     res.redirect('/');
 }
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
 function checkNull(input) {
-    if (input == 'none') {
+    if (input === 'none') {
         return null;
     } else {
         return input
     }
-}
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
 }
