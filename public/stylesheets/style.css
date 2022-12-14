@@ -35,7 +35,7 @@ body {
   height: 365px;
   width: 225px;
   border-radius: 8px;
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
   margin: 16px;
 }
 
@@ -93,6 +93,7 @@ body {
   font-family: 'Nerko One', cursive;
   -webkit-text-stroke: 2px #2972b8;
   color: #ffcb05;
+  box-shadow: -4px -4px 15px -5px rgba(77,77,77,1) inset;
 }
 
 .white {
@@ -129,11 +130,12 @@ body {
 }
 
 .buttons button:hover {
-  box-shadow: -5px -5px 15px -5px rgba(77,77,77,1) inset;
+  box-shadow: -8px -8px 15px -5px rgba(77,77,77,1) inset;
+  cursor: pointer;
 }
 
 .buttons button:focus {
-  box-shadow: -10px -10px 15px -5px rgba(77,77,77,1) inset;
+  box-shadow: -12px -12px 15px -5px rgba(77,77,77,1) inset;
 }
 
 .edit a {
