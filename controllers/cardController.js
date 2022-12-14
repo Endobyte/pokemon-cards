@@ -26,7 +26,7 @@ module.exports.viewCards = async function(req, res) {
         let randomIndex = getRandomInt(cards.length);
         cards = [cards[randomIndex]];
     }
-    res.render('index', {cards, types:searchTypes, searchType});
+    res.render('index', {cards, types:searchTypes, searchType, searchRandom});
 }
 
 module.exports.renderEditForm = async function(req, res) {
