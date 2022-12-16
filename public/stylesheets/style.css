@@ -128,6 +128,10 @@ body {
   width: 16px;
 }
 
+.cursor {
+  cursor: pointer;
+}
+
 .homepage label {
   font-family: 'Nerko One', cursive;
   font-size: 24px;

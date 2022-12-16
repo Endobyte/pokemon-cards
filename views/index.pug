@@ -10,12 +10,12 @@ block content
         div.column
           div.form-input.homepage
             label.white(for='type') Type
-            select(id='type' name='type' autocomplete='off')
+            select.cursor(id='type' name='type' autocomplete='off')
               each type in types
                 option(value = type selected = (type === searchType)) #{type}
           div.form-input.homepage
             label.white(for='random') Random?
-            input(type='checkbox' name='random' id='random' checked=searchRandom)
+            input.cursor(type='checkbox' name='random' id='random' checked=searchRandom)
         button.button.save.special(type='submit') FILTER
   include mixins/pokemonCard
   div.card-area
